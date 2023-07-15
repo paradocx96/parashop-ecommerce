@@ -14,10 +14,25 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
-            return {
-                ...state,
-                items: [...state.items, action.payload],
-            };
+            const existingItem = state.items.findIndex(
+                (item) => item.id === action.payload.id
+            )
+
+            if (existingItem >= 0) {
+                return {
+                    ...state,
+                    items: state.items.map((item) =>
+                        item.id === action.payload.id
+                            ? {...item, quantity: item.quantity + 1}
+                            : item
+                    ),
+                };
+            } else {
+                return {
+                    ...state,
+                    items: [...state.items, {...action.payload, quantity: 1}],
+                };
+            }
 
         case REMOVE_ITEM:
             return {
