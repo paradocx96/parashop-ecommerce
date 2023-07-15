@@ -9,15 +9,18 @@ import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import StoreIcon from '@mui/icons-material/Store';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {cartItemsCountSelector} from "../../state/selectors/cartSelector";
 
 
 export default function NavigationBar() {
-    const cartItems = useSelector((state) => state.items);
+    const cartItems = useSelector(cartItemsCountSelector);
 
     return (
         <AppBar position="sticky">
             <Toolbar>
-                <StoreIcon/>
+                <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}>
+                    <StoreIcon/>
+                </Link>
                 <Typography
                     variant="h5"
                     noWrap
@@ -30,13 +33,13 @@ export default function NavigationBar() {
                 <Box sx={{flexGrow: 1}}/>
 
                 <Link to={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
-                    <Box sx={{display: {xs: 'none', md: 'flex'}}}>
+                    <Box>
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"
                         >
-                            <Badge badgeContent={cartItems.items.length} color="error">
+                            <Badge badgeContent={cartItems} color="error">
                                 <ShoppingCart/>
                             </Badge>
                         </IconButton>
