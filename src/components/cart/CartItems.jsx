@@ -25,6 +25,7 @@ function CartItems() {
             {/* Cart Items */}
             <div className="cart-item-list">
                 {cartItems.items.length === 0 ? (
+                    // Empty Cart
                     <div className="cart-empty">
                         <p>Your cart is currently empty</p>
                         <div className="start-shopping">
@@ -45,7 +46,7 @@ function CartItems() {
                                     <div className="cart-product">
                                         <img src={item.image} alt={item.title}/>
                                         <div>
-                                            <Typography variant="h6">{item.title}</Typography>
+                                            <div className="cart-item-title">{item.title}</div>
                                             <div className="cart-item-price">${item.price}</div>
                                             <button onClick={() => dispatch(removeItem(item.id))}>Remove</button>
                                         </div>
