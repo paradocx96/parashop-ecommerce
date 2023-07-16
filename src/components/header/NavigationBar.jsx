@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import StoreIcon from '@mui/icons-material/Store';
@@ -21,14 +20,9 @@ export default function NavigationBar() {
                 <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}>
                     <StoreIcon/>
                 </Link>
-                <Typography
-                    variant="h5"
-                    noWrap
-                    component="div"
-                    sx={{display: {xs: 'none', sm: 'block'}}}
-                >
-                    ParaShop
-                </Typography>
+                <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}>
+                    <div className="nav-banner">ParaShop</div>
+                </Link>
 
                 <Box sx={{flexGrow: 1}}/>
 
