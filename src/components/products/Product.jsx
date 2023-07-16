@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import {Button, Rating} from "@mui/material";
 import {addToCart} from "../../state/actions/cartActions";
 import {useDispatch} from "react-redux";
-import './product.css'
+
 
 function Product({product}) {
     const dispatch = useDispatch();

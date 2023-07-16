@@ -3,7 +3,8 @@ import Products from "../components/products/Products";
 
 function Home() {
     return (
-        <div>
+        <div className="product-body">
+            <div style={{height: '100px'}}/>
             <Products/>
         </div>
     );
