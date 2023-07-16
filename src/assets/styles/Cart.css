@@ -3,7 +3,7 @@
     padding: 2rem 4rem;
     margin: 95px 20px 20px 20px;
     border-radius: 25px;
-    box-shadow: 0 10px 10px dimgray;
+    box-shadow: 0 0 5px 0 dimgray;
 }
 
 .cart-container .cart-header {
