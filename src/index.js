@@ -3,6 +3,7 @@ import './assets/styles/Cart.css'
 import './assets/styles/Product.css'
 import './assets/styles/Navigation.css'
 import './assets/styles/Carousel.css'
+import './assets/styles/Footer.css'
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
