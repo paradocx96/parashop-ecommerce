@@ -1,21 +1,18 @@
 .carousel-box {
     border: 20px solid white;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 95px;
     margin-bottom: 20px;
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 16vh);
+    background-color: white;
+    box-shadow: 0 0 5px 0 dimgray;
 }
-
-/*.carousel-item {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
 
 .carousel-item img {
     width: 100%;
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 16vh);
     object-fit: cover;
+    border-radius: 15px;
 }
 
 @media (max-width: 600px) {
