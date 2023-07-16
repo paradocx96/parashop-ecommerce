@@ -1,4 +1,6 @@
 import './index.css';
+import './assets/styles/Cart.css'
+import './assets/styles/Product.css'
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
