@@ -1,5 +1,4 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -15,31 +14,35 @@ export default function NavigationBar() {
     const cartItems = useSelector(cartItemsCountSelector);
 
     return (
-        <AppBar position="sticky">
-            <Toolbar>
-                <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}>
-                    <StoreIcon/>
-                </Link>
-                <Link to={'/'} style={{textDecoration: 'none', color: 'white'}}>
-                    <div className="nav-banner">ParaShop</div>
-                </Link>
+        <div className="navbar">
+            <div className="navbar-container">
+                <Toolbar>
+                    <Box sx={{flexGrow: 1}}/>
 
-                <Box sx={{flexGrow: 1}}/>
+                    <Link to={'/'} style={{textDecoration: 'none', color: 'black'}}>
+                        <StoreIcon/>
+                    </Link>
+                    <Link to={'/'} style={{textDecoration: 'none', color: 'black'}}>
+                        <div className="navbar-banner">ParaShop</div>
+                    </Link>
 
-                <Link to={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
-                    <Box>
-                        <IconButton
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
-                        >
-                            <Badge badgeContent={cartItems} color="error">
-                                <ShoppingCart/>
-                            </Badge>
-                        </IconButton>
-                    </Box>
-                </Link>
-            </Toolbar>
-        </AppBar>
+                    <Box sx={{flexGrow: 1}}/>
+
+                    <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}>
+                        <Box>
+                            <IconButton
+                                size="large"
+                                aria-label="show 17 new notifications"
+                                color="inherit"
+                            >
+                                <Badge badgeContent={cartItems} color="error">
+                                    <ShoppingCart/>
+                                </Badge>
+                            </IconButton>
+                        </Box>
+                    </Link>
+                </Toolbar>
+            </div>
+        </div>
     );
 }
