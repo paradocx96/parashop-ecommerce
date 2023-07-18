@@ -5,6 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {useDispatch, useSelector} from "react-redux";
 import {clearCart, decrementItemQuantity, incrementItemQuantity, removeItem} from "../../state/actions/cartActions";
 import {cartItemsCountSelector, cartSelector, cartTotalSelector} from "../../state/selectors/cartSelector";
+import generatePDFInvoice from "../../pdf/generatePDFInvoice";
 
 
 function CartItems() {
@@ -12,6 +13,21 @@ function CartItems() {
     const cartItems = useSelector(cartSelector);
     const cartItemsCount = useSelector(cartItemsCountSelector);
     const cartTotal = useSelector(cartTotalSelector);
+
+    const generatePDF = () => {
+        event.preventDefault();
+
+        let customer = {
+            id: 'ORD001',
+            customer: {
+                name: 'John Doe',
+                email: 'john.doe@example.com',
+                address: '123 Main Street, City, State, Country',
+            }
+        }
+
+        generatePDFInvoice(customer, cartItems.items);
+    }
 
     return (
         <div className="cart-container">
@@ -83,7 +99,7 @@ function CartItems() {
                     <p>{cartItemsCount} Items</p>
 
                     {/* Checkout */}
-                    <button>Checkout</button>
+                    <button onClick={() => generatePDF()}>Checkout</button>
 
                     <div className="continue-shopping">
                         <Link to={'/'} style={{textDecoration:"none"}}>
